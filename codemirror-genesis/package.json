@@ -7,7 +7,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "stylus": "node node_modules/stylus/bin/stylus src/style.styl --out build/genesis.css --compress"
+    "stylus": "node node_modules/stylus/bin/stylus src/style.styl --out ../src/genesis.css --compress --watch"
   },
   "author": "Hendrik Wallbaum <mail@hendrikwallbaum.de>",
   "license": "MIT"

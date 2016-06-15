@@ -28,3 +28,13 @@ body {
 #out {
 	display: none;
 }
+
+/*
+	CodeMirror
+ */
+
+.CodeMirror pre span {
+	font-weight: 300;
+	letter-spacing: 0.03rem;
+	line-height: 120%;
+}
