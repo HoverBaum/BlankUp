@@ -1,0 +1,27 @@
+{
+  "name": "BlankUp",
+  "version": "0.1.0",
+  "description": "Markdown editor with clarity +1",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoverBaum/BlankUp.git"
+  },
+  "keywords": [
+    "Electron",
+	"Markdown",
+	"Editor"
+  ],
+  "author": "Hendrik Wallbaum <mail@hendrikwallbaum.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HoverBaum/BlankUp/issues"
+  },
+  "homepage": "https://github.com/HoverBaum/BlankUp",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  }
+}
