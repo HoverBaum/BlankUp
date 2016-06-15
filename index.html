@@ -108,13 +108,8 @@ $(function(){
       .use(markdownitFootnote);
 
 
-    var hashto;
-
     function update(e){
       setOutput(e.getValue());
-
-      clearTimeout(hashto);
-      hashto = setTimeout(updateHash, 1000);
     }
 
     function setOutput(val){
@@ -246,40 +241,8 @@ $(function(){
     });
 
 
+	update(editor)
 
-
-    function updateHash(){
-      window.location.hash = btoa( // base64 so url-safe
-        RawDeflate.deflate( // gzip
-          unescape(encodeURIComponent( // convert to utf8
-            editor.getValue()
-          ))
-        )
-      );
-    }
-
-    if(window.location.hash){
-      var h = window.location.hash.replace(/^#/, '');
-      if(h.slice(0,5) == 'view:'){
-        setOutput(decodeURIComponent(escape(RawDeflate.inflate(atob(h.slice(5))))));
-        document.body.className = 'view';
-      }else{
-        editor.setValue(
-          decodeURIComponent(escape(
-            RawDeflate.inflate(
-              atob(
-                h
-              )
-            )
-          ))
-        );
-        update(editor);
-        editor.focus();
-      }
-    }else{
-      update(editor);
-      editor.focus();
-    }
   </script>
 </body>
 </html>
