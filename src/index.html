@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BlankUp</title>
+  <script src="markdown-it.js"></script>
+  <script src="markdown-it-footnote.js"></script>
+  <script src="highlight.pack.js"></script>
+  <script src="emojify.js"></script>
+  <script src="codemirror/lib/codemirror.js"></script>
+  <script src="codemirror/overlay.js"></script>
+  <script src="codemirror/xml/xml.js"></script>
+  <script src="codemirror/markdown/markdown.js"></script>
+  <script src="codemirror/gfm/gfm.js"></script>
+  <script src="codemirror/javascript/javascript.js"></script>
+  <script src="codemirror/css/css.js"></script>
+  <script src="codemirror/htmlmixed/htmlmixed.js"></script>
+  <script src="codemirror/lib/util/continuelist.js"></script>
+  <script src="rawinflate.js"></script>
+  <script src="rawdeflate.js"></script>
+  <link rel="stylesheet" href="base16-light.css">
+  <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="default.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ 	<div id="in">
+	  	<textarea id="code"># BlankUp
+
+Basic useful feature list:
+
+ * Ctrl+S / Cmd+S to save the file
+ * Ctrl+Shift+S / Cmd+Shift+S to choose to save as Markdown or HTML
+ * Drag and drop a file into here to load it
+ * File contents are saved in the URL so you can share files
+
+
+I'm no good at writing sample / filler text, so go write something yourself.
+
+Look, a list!
+
+ * foo
+ * bar
+ * baz
+
+And here's some code! :+1:
+
+```javascript
+$(function(){
+  $('div').html('I am a div.');
+});
+```
+
+### Stuff used to make this:
+
+ * [markdown-it](https://github.com/markdown-it/markdown-it) for Markdown parsing
+ * [CodeMirror](http://codemirror.net/) for the awesome syntax-highlighted editor
+ * [highlight.js](http://softwaremaniacs.org/soft/highlight/en/) for syntax highlighting in output code blocks
+ * [js-deflate](https://github.com/dankogai/js-deflate) for gzipping of data to make it fit in URLs
+		</textarea>
+	</div>
+  	<div id="out"></div>
+
+
+  	<script src="js/BlankUp.js">
+  	</script>
+  	<script>
+    	// You can also require other files to run in this process
+    	//require('./renderer.js')
+  	</script>
+</body>
+</html>
