@@ -9,7 +9,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	background-color: #f5f5f5;
+	background-color: #282c34;
 }
 
 .part {
