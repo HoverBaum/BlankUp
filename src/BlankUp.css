@@ -18,9 +18,8 @@ body {
 	justify-content: center;
 }
 
-.CodeMirror {
+.CodeMirror-wrap {
 	flex-grow: 1;
-	max-width: 70%;
 	height: 100%;
 	font-size: 18px;
 }
