@@ -7,18 +7,21 @@ body {
 }
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   background-color: #282c34;
 }
 .part {
+  flex-grow: 1;
+}
+.CodeMirror {
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-.CodeMirror-wrap {
-  flex-grow: 1;
-  height: 100%;
+.CodeMirror-scroll {
+  width: 800px;
 }
 #out {
   display: none;

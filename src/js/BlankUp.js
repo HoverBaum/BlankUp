@@ -61,7 +61,9 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
   matchBrackets: true,
   lineWrapping: true,
   theme: 'genesis',
-  extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
+  extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"},
+  viewportMargin: Infinity,
+  scrollbarStyle: "null"
 });
 
 /*
