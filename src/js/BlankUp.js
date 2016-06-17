@@ -1,3 +1,4 @@
+/*
 var URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
 navigator.saveBlob = navigator.saveBlob || navigator.msSaveBlob || navigator.mozSaveBlob || navigator.webkitSaveBlob;
 window.saveAs = window.saveAs || window.webkitSaveAs || window.mozSaveAs || window.msSaveAs;
@@ -52,6 +53,7 @@ function setOutput(val){
 	}
   }
 }
+*/
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
   mode: 'gfm',
@@ -62,6 +64,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
   extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"}
 });
 
+/*
 editor.on('change', update);
 
 
@@ -80,3 +83,5 @@ document.addEventListener('drop', function(e){
 
 
 update(editor)
+
+*/

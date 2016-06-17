@@ -4,7 +4,8 @@
   "description": "Markdown editor with clarity +1",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js"
+    "start": "electron main.js",
+    "stylus": "node node_modules/stylus/bin/stylus src/styl/codemirror.styl --out src/css/codemirror.css --watch"
   },
   "repository": {
     "type": "git",
@@ -12,8 +13,8 @@
   },
   "keywords": [
     "Electron",
-	"Markdown",
-	"Editor"
+    "Markdown",
+    "Editor"
   ],
   "author": "Hendrik Wallbaum <mail@hendrikwallbaum.de>",
   "license": "MIT",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/HoverBaum/BlankUp",
   "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
+    "electron-prebuilt": "^1.2.0",
+    "stylus": "^0.54.5"
   }
 }

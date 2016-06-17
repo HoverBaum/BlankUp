@@ -1,0 +1,62 @@
+@import "codemirrorBasic"
+@import "genesis-colors"
+
+headlineBlue = saturation(blue, 80%)
+textBlue = saturation(blue, 60%)
+
+.cm-s-genesis.CodeMirror
+  background: syntax-background-color
+  color: syntax-text-color
+
+.cm-s-genesis div.CodeMirror-selected
+  background: syntax-selection-color !important
+
+.cm-s-genesis.CodeMirror ::selection
+  background: syntax-selection-color
+
+.cm-s-genesis.CodeMirror ::-moz-selection
+  background: syntax-selection-color
+
+.cm-s-genesis .CodeMirror-gutters
+  background: syntax-gutter-background-color
+  color: syntax-gutter-text-color
+
+.cm-s-genesis span
+	font-weight: 400
+	&.cm-header
+		color: headlineBlue
+	&.cm-header-1
+		font-size: 1.5rem
+	&.cm-header-2
+		font-size: 1.4rem
+	&.cm-header-3
+		font-size: 1.3rem
+	&.cm-header-4
+		font-size: 1.2rem
+	&.cm-header-5
+		font-size: 1.1rem
+	&.cm-link
+		color: textBlue
+		text-decoration: none
+	&.cm-property,
+	&.cm-formatting-list,
+	&.cm-formatting-task,
+	&.cm-meta
+		color: textBlue
+	&.cm-url,
+	&.cm-comment
+	&.cm-tag,
+	&.cm-bracket
+	  	color: syntax-comment-color
+	&.cm-em,
+	&.cm-strong
+		color: light-pink
+	&.cm-quote:not(.cm-formatting)
+		color: gray
+
+.CodeMirror pre span
+	font-weight: normal
+	font-family: "Fira Mono", sans-serif
+
+.cm-s-genesis .CodeMirror-cursor
+	border-left: 2px solid blue !important
