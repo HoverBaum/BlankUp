@@ -1,3 +1,5 @@
+@import "genesis-colors"
+
 html,
 body
   	padding: 0
@@ -5,22 +7,44 @@ body
   	width: 100%
   	height: 100%
 
+/*
+	BlankUp
+	The stuff we really care about.
+ */
+
 .BlankUp
 	display: flex
 	flex-direction: row
 	flex-wrap: wrap
 	width: 100%
+	height: 100%
+	overflow-y: scroll
 	background-color: #282c34
-	padding-bottom: 2rem
 
 .BlankUp-part
 	flex-grow: 1
+
+//Nice scrollbar
+::-webkit-scrollbar
+    width: 0.4rem
+
+::-webkit-scrollbar-track
+	background-color: syntax-selection-color
+
+::-webkit-scrollbar-thumb
+	background-color: saturation(mainColor, 50%)
+	opacity: 0.5
+
+/*
+	Codemirror arrangements
+ */
 
 .CodeMirror
 	height: auto
 	display: flex
 	flex-direction: row
 	justify-content: center
+	padding-bottom: 2rem
 
 //This makes sure that marked lines are all the same size
 //And defines how wide the area for text is.
