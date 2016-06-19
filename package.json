@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron main.js",
     "stylus": "node node_modules/stylus/bin/stylus src/styl/codemirror.styl src/styl/BlankUp.styl src/styl/hljsDefault.styl --out src/css --watch",
-	"build": ""
+    "webpack": "node node_modules/webpack/bin/webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -25,8 +25,11 @@
   "homepage": "https://github.com/HoverBaum/BlankUp",
   "devDependencies": {
     "electron-prebuilt": "^1.2.0",
-    "stylus": "^0.54.5"
+    "extract-text-webpack-plugin": "^1.0.1",
+    "stylus": "^0.54.5",
+    "webpack": "^1.13.1"
   },
   "dependencies": {
+    "markdown-it": "^6.1.0"
   }
 }
