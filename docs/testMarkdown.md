@@ -1,47 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  	<title>BlankUp</title>
 
-  	<script src="markdown-it.js"></script>
-  	<script src="markdown-it-footnote.js"></script>
-  	<script src="highlight.pack.js"></script>
-  	<script src="emojify.js"></script>
-
-<script src="/js/codemirror.min.js"></script>
-  	<link rel="stylesheet" href="/css/fira.css" />
-	<link rel="stylesheet" href="/css/markdown-body.css">
-	<link rel="stylesheet" href="/css/codemirror.css">
-  	<link rel="stylesheet" href="/css/hljsDefault.css">
-  	<link rel="stylesheet" href="/css/BlankUp.css">
-
-</head>
-<body>
-
-	<div class="BlankUp">
-
-		<!-- The part with the editor -->
-		<div class="BlankUp-part">
-			<textarea class="BlankUp-textarea" id="code">
-			</textarea>
-		</div>
-
-		<!-- HTML preview window -->
-		<div class="BlankUp-part BlankUp-preview markdown-body">
-
-		</div>
-
-	</div>
-
-  	<script>
-		const initial = `
 # Markdown Syntax
 
 ## Header
 
-# This is an \`<h1>\` tag
-## This is an \`<h2>\` tag
-###### This is an \`<h6>\` tag
+# This is an `<h1>` tag
+## This is an `<h2>` tag
+###### This is an `<h6>` tag
 
 ## Emphasis
 
@@ -87,7 +51,7 @@ As Kanye West said:
 ## Inline code
 
 I think you should use an
-\`<addr>\` element here instead.
+`<addr>` element here instead.
 
 # GFM
 
@@ -103,13 +67,13 @@ If you've got a longer block of code, you can indent with four spaces:
 
 ## Syntax highlighting
 
-\`\`\`javascript
+```javascript
 	function fancyAlert(arg) {
 	  if(arg) {
 	    $.facebox({div:'#foo'})
 	  }
 	}
-\`\`\`
+```
 
 ## Task Lists
 
@@ -131,10 +95,4 @@ And, of course emoji! :sparkles: :camel: :boom:
 
 # Some more to capture Carets highlighting
 
-Using [] in a normal text, or <tag></tag> (which auto closes). * here is a star. It suggested me to type between two * s. Very nice markdown formatting help. - , seems like markers are recognized as what tehy are.`
-	document.querySelector('#code').value = initial
-  	</script>
-	<script src="js/BlankUp.js">
-	</script>
-</body>
-</html>
+Using [] in a normal text, or <tag></tag> (which auto closes). * here is a star. It suggested me to type between two * s. Very nice markdown formatting help. - , seems like markers are recognized as what tehy are.

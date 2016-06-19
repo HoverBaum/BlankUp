@@ -1,4 +1,5 @@
 @import "genesis-colors"
+@import "preview"
 
 html,
 body
@@ -26,7 +27,10 @@ body
 	padding: 0 2rem
 
 .BlankUp-preview
-	background-color: saturation(whiteBlue, 10%)
+	background-color: #fff
+	padding-top: 2rem
+	padding-bottom: 2rem
+	box-sizing: border-box //Else the page will scroll instead of the preview
 
 //Nice scrollbar
 ::-webkit-scrollbar
@@ -38,6 +42,9 @@ body
 ::-webkit-scrollbar-thumb
 	background-color: saturation(mainColor, 50%)
 	opacity: 0.5
+
+.BlankUp-preview::webkit-scrollbar-track
+	background-color: lighten(syntax-selection-color, 50%)
 
 /*
 	Codemirror arrangements

@@ -25,5 +25,7 @@
   "devDependencies": {
     "electron-prebuilt": "^1.2.0",
     "stylus": "^0.54.5"
+  },
+  "dependencies": {
   }
 }

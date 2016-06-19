@@ -11,6 +11,8 @@ emojify.setConfig({
 //Get an instance of markdown-it to parse the markdown to HTML
 var md = markdownit({
         html: true,
+		linkify: true,
+  		typographer: true,
         highlight: function(code, lang) {
             if (languageOverrides[lang]) lang = languageOverrides[lang];
             if (lang && hljs.getLanguage(lang)) {
@@ -63,20 +65,6 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
 
 
 editor.on('change', update);
-/*
 
-document.addEventListener('drop', function(e){
-  e.preventDefault();
-  e.stopPropagation();
-
-  var reader = new FileReader();
-  reader.onload = function(e){
-	editor.setValue(e.target.result);
-  };
-
-  reader.readAsText(e.dataTransfer.files[0]);
-}, false);
-
-*/
 
 update(editor)
