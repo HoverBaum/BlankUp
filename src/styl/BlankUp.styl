@@ -5,13 +5,15 @@ body
   	width: 100%
   	height: 100%
 
-body
-  	display: flex
-  	flex-direction: row
-  	flex-wrap: wrap
-  	background-color: #282c34
+.BlankUp
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	width: 100%
+	background-color: #282c34
+	padding-bottom: 2rem
 
-.part
+.BlankUp-part
 	flex-grow: 1
 
 .CodeMirror
@@ -20,8 +22,9 @@ body
 	flex-direction: row
 	justify-content: center
 
+//This makes sure that marked lines are all the same size
+//And defines how wide the area for text is.
 .CodeMirror-scroll
 	width: 800px
-
-#out
-  	display: none
+	&::-webkit-scrollbar
+		display: none
