@@ -496,8 +496,8 @@ span.CodeMirror-selectedtext {
   }
 }
 .cm-s-genesis.CodeMirror {
-  background: #282c34;
-  color: #dadee5;
+  background: #3d4954;
+  color: #ecf0f0;
 }
 .cm-s-genesis div.CodeMirror-selected {
   background: #454c59 !important;
@@ -509,7 +509,7 @@ span.CodeMirror-selectedtext {
   background: #454c59;
 }
 .cm-s-genesis .CodeMirror-gutters {
-  background: #282c34;
+  background: #3d4954;
   color: #a0a8b7;
 }
 .CodeMirror pre span {
@@ -554,7 +554,7 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-comment,
 .cm-s-genesis span.cm-tag,
 .cm-s-genesis span.cm-bracket {
-  color: #545b68;
+  color: #717d7d;
 }
 .cm-s-genesis span.cm-em,
 .cm-s-genesis span.cm-strong {
