@@ -512,6 +512,13 @@ span.CodeMirror-selectedtext {
   background: #282c34;
   color: #a0a8b7;
 }
+.CodeMirror pre span {
+  font-weight: normal;
+  font-family: "Fira Mono", sans-serif;
+}
+.cm-s-genesis .CodeMirror-cursor {
+  border-left: 2px solid #5caef2 !important;
+}
 .cm-s-genesis span {
   font-weight: 400;
 }
@@ -556,10 +563,6 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-quote:not(.cm-formatting) {
   color: #aab1bf;
 }
-.CodeMirror pre span {
-  font-weight: normal;
-  font-family: "Fira Mono", sans-serif;
-}
-.cm-s-genesis .CodeMirror-cursor {
-  border-left: 2px solid #5caef2 !important;
+.cm-s-genesis span.cm-strong {
+  font-weight: bold;
 }

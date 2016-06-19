@@ -28,6 +28,13 @@ textBlue = saturation(blue, 60%)
   background: syntax-gutter-background-color
   color: syntax-gutter-text-color
 
+.CodeMirror pre span
+	font-weight: normal
+	font-family: "Fira Mono", sans-serif
+
+.cm-s-genesis .CodeMirror-cursor
+	border-left: 2px solid blue !important
+
 .cm-s-genesis span
 	font-weight: 400
 	&.cm-header
@@ -60,10 +67,5 @@ textBlue = saturation(blue, 60%)
 		color: light-pink
 	&.cm-quote:not(.cm-formatting)
 		color: gray
-
-.CodeMirror pre span
-	font-weight: normal
-	font-family: "Fira Mono", sans-serif
-
-.cm-s-genesis .CodeMirror-cursor
-	border-left: 2px solid blue !important
+	&.cm-strong
+		font-weight: bold
