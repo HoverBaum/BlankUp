@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "stylus": "node node_modules/stylus/bin/stylus src/styl/codemirror.styl src/styl/BlankUp.styl --out src/css --watch"
+    "stylus": "node node_modules/stylus/bin/stylus src/styl/codemirror.styl src/styl/BlankUp.styl src/styl/hljsDefault.styl --out src/css --watch"
   },
   "repository": {
     "type": "git",
