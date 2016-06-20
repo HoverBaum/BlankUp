@@ -10,9 +10,9 @@ Roadmap:
 
 - [x] Refactore styling to use Stylus
 - [x] Move to a Genesis like color scheme because I love it
+- [ ] Use a bundler for NPM packages
 - [ ] Make some improvements to editor
  	- [x] Lists, highlight markers
- 	- [ ] HTML Tags are breaking formatting, FIXME
  	- [ ] Include something to autoclose things like bold
  	- [ ] Probably need to improve dynamic size of editor
 - [ ] Also some for the preview
