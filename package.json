@@ -5,8 +5,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "stylus": "node node_modules/stylus/bin/stylus src/styl/codemirror.styl src/styl/BlankUp.styl src/styl/hljsDefault.styl --out src/css --watch",
-    "browserify": "node node_modules/browserify/bin/cmd src/js/BlankUp -o build/BlankUp.js"
+    "stylus": "node node_modules/stylus/bin/stylus src/styl/BlankUp.styl --out src/css --watch",
+    "watchify": "node node_modules/watchify/bin/cmd src/js/BlankUp -o build/BlankUp.js --debug -v",
+	"stylus-build": "node node_modules/stylus/bin/stylus src/styl/BlankUp.styl --out build/ --watch",
+	"build": "npm run watchify && npm run stylus-build"
   },
   "repository": {
     "type": "git",
@@ -25,12 +27,14 @@
   "homepage": "https://github.com/HoverBaum/BlankUp",
   "devDependencies": {
     "browserify": "^13.0.1",
+    "codemirror": "^5.15.2",
     "electron-prebuilt": "^1.2.0",
+    "emojify.js": "^1.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "stylus": "^0.54.5",
-	"markdown-it": "^6.1.0"
+    "highlight.js": "^9.4.0",
+    "markdown-it": "^6.1.0",
+    "markdown-it-footnote": "^2.0.0",
+    "stylus": "^0.54.5"
   },
-  "dependencies": {
-
-  }
+  "dependencies": {}
 }

@@ -4,7 +4,7 @@
 
 	var emojify = (function () {
 		// Get DOM as local variable for simplicity's sake
-		var document = global.window.document;
+		var document = window.document;
 
 		/**
 		 * NB!

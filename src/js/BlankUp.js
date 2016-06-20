@@ -1,9 +1,11 @@
 
 //First strap a lot of things in
 //This is donw with webpack
-require('./emojify')
-require('./highlight.pack.js')
+const emojify = require('emojify.js')
+const hljs = require('highlight.js')
 const markdownit = require('markdown-it')
+const markdownitFootnote = require('markdown-it-footnote')
+const CodeMirror = require('codemirror')
 
 // Because highlight.js is a bit awkward at times
 var languageOverrides = {
