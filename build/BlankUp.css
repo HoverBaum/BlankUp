@@ -1449,3 +1449,31 @@ body {
 .CodeMirror-scroll::-webkit-scrollbar {
   display: none;
 }
+/* Example usage */
+a {
+  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
+  background-image: linear-gradient(#333, #333);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  background-position: 0% 95%;
+  color: #333;
+  text-decoration: none;
+}
+a::selection {
+  text-shadow: 0.03em 0 #0cb, -0.03em 0 #0cb, 0 0.03em #0cb, 0 -0.03em #0cb, 0.06em 0 #0cb, -0.06em 0 #0cb, 0.09em 0 #0cb, -0.09em 0 #0cb, 0.12em 0 #0cb, -0.12em 0 #0cb, 0.15em 0 #0cb, -0.15em 0 #0cb;
+  background: #0cb;
+}
+a::-moz-selection {
+  text-shadow: 0.03em 0 #0cb, -0.03em 0 #0cb, 0 0.03em #0cb, 0 -0.03em #0cb, 0.06em 0 #0cb, -0.06em 0 #0cb, 0.09em 0 #0cb, -0.09em 0 #0cb, 0.12em 0 #0cb, -0.12em 0 #0cb, 0.15em 0 #0cb, -0.15em 0 #0cb;
+  background: #0cb;
+}
+a *,
+a *:after,
+a:after,
+a *:before,
+a:before {
+  text-shadow: none;
+}
+a:visited {
+  color: #333;
+}
