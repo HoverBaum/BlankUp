@@ -8,6 +8,6 @@ The editor will have somewhat of a WYSIWYG feel in the sense that syntax will be
 
 ```javascript
 options: {
-	
+
 }
 ```

@@ -1442,6 +1442,9 @@ body {
   flex-direction: row;
   justify-content: center;
 }
+.CodeMirror-scroll {
+  min-height: 100%;
+}
 .CodeMirror-scroll::-webkit-scrollbar {
   display: none;
 }
@@ -1449,6 +1452,7 @@ body {
   border-right: 1px solid #37424c !important;
   max-width: 800px;
   min-width: 500px;
+  min-height: 100%;
 }
 a {
   text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
