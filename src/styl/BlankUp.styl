@@ -56,21 +56,24 @@ body
  */
 
 .CodeMirror
+	min-height: 100%
 	height: auto
 	display: flex
 	flex-direction: row
 	justify-content: center
-	padding-bottom: 2rem
 
 //This makes sure that marked lines are all the same size
 //And defines how wide the area for text is.
 .CodeMirror-scroll
-	max-width: 800px
-	border-right: 1px solid darken(syntax-background-color, 10%)
 	&::-webkit-scrollbar
 		display: none
 
+.CodeMirror-sizer
+	border-right: 1px solid darken(syntax-background-color, 10%) !important
+	max-width: 800px
+	min-width: 500px
 
-/* Example usage */
+
+// Make links nice, for preview
 a
 	link-underline(#fff, #333333, #00ccbb)

@@ -1436,20 +1436,20 @@ body {
 	Codemirror arrangements
  */
 .CodeMirror {
+  min-height: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-bottom: 2rem;
-}
-.CodeMirror-scroll {
-  max-width: 800px;
-  border-right: 1px solid #37424c;
 }
 .CodeMirror-scroll::-webkit-scrollbar {
   display: none;
 }
-/* Example usage */
+.CodeMirror-sizer {
+  border-right: 1px solid #37424c !important;
+  max-width: 800px;
+  min-width: 500px;
+}
 a {
   text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
   background-image: linear-gradient(#333, #333);
