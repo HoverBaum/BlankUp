@@ -1407,7 +1407,9 @@ body {
   height: 100%;
   background-color: #3d4954;
 }
-.BlankUp-part {
+.BlankUp-part,
+.BlankUp__input,
+.BlankUp__preview {
   flex-grow: 1;
   height: 100%;
   overflow-y: scroll;
@@ -1418,13 +1420,13 @@ body {
   width: 100%;
   padding-top: 1em;
 }
+.BlankUp_show-preview .BlankUp__input {
+  width: 50%;
+}
 .BlankUp__preview {
   background-color: #fff;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  box-sizing: border-box;
-}
-.BlankUp_show-preview .BlankUp-part {
   width: 50%;
 }
 ::-webkit-scrollbar {

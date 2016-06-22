@@ -33,17 +33,20 @@ body
 	box-sizing: border-box
 
 .BlankUp__input
+	@extend .BlankUp-part
 	width: 100%
 	padding-top: 1em
 
+.BlankUp_show-preview .BlankUp__input
+	width: 50%
+
 .BlankUp__preview
+	@extend .BlankUp-part
 	background-color: #fff
 	padding-top: 2rem
 	padding-bottom: 2rem
-	box-sizing: border-box //Else the page will scroll instead of the preview
-
-.BlankUp_show-preview .BlankUp-part
 	width: 50%
+
 
 //Nice scrollbar
 ::-webkit-scrollbar
