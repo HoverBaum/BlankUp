@@ -40,7 +40,7 @@ function update(e) {
 }
 
 function setOutput(val) {
-    var out = document.querySelector('.BlankUp-preview');
+    var out = document.querySelector('.BlankUp__preview');
     var old = out.cloneNode(true);
     out.innerHTML = md.render(val);
     emojify.run(out);

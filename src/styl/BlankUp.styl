@@ -30,19 +30,27 @@ body
 	height: 100%
 	overflow-y: scroll
 	padding: 0 2rem
+	box-sizing: border-box
 
-.BlankUp-preview
+.BlankUp__input
+	width: 100%
+	padding-top: 1em
+
+.BlankUp__preview
 	background-color: #fff
 	padding-top: 2rem
 	padding-bottom: 2rem
 	box-sizing: border-box //Else the page will scroll instead of the preview
+
+.BlankUp_show-preview .BlankUp-part
+	width: 50%
 
 //Nice scrollbar
 ::-webkit-scrollbar
     width: 0.4rem
 
 ::-webkit-scrollbar-track
-	background-color: syntax-selection-color
+	//background-color: syntax-selection-color
 
 ::-webkit-scrollbar-thumb
 	background-color: saturation(mainColor, 50%)
@@ -73,7 +81,6 @@ body
 	border-right: 1px solid darken(syntax-background-color, 10%) !important
 	max-width: 800px
 	min-width: 500px
-	min-height: 100%
 
 
 // Make links nice, for preview
