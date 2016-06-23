@@ -1389,6 +1389,21 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-strong {
   font-weight: bold;
 }
+.cm-s-genesis span.cm-string {
+  color: #90bb71;
+}
+.cm-s-genesis span.cm-number {
+  color: #90bb71;
+}
+.cm-s-genesis span.cm-def {
+  color: #d2876d;
+}
+.cm-s-genesis span.cm-variable {
+  color: #5caef2;
+}
+.cm-s-genesis span.cm-keyword {
+  color: #c473dc;
+}
 html,
 body {
   padding: 0;

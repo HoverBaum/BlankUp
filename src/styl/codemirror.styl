@@ -5,6 +5,8 @@
 	Thing of this as defining coloring for syntax.
  */
 
+//FIXME this should probably require the basics from NPM module but somehow
+//That borke things...
 @import "codemirrorBasic"
 @import "genesis-colors"
 
@@ -35,6 +37,9 @@ textBlue = saturation(blue, 60%)
 .cm-s-genesis .CodeMirror-cursor
 	border-left: 2px solid blue !important
 
+/*
+	Markdown highlighting
+ */
 .cm-s-genesis span
 	font-weight: 400
 	&.cm-header
@@ -70,3 +75,18 @@ textBlue = saturation(blue, 60%)
 		color: gray
 	&.cm-strong
 		font-weight: bold
+
+/*
+	Extra things to highlight codeblocks
+ */
+.cm-s-genesis span
+	&.cm-string
+		color: light-green
+	&.cm-number
+		color: green
+	&.cm-def
+		color: orange
+	&.cm-variable
+		color: blue
+	&.cm-keyword
+		color: pink
