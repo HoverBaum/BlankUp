@@ -5,7 +5,14 @@ const emojify = require('emojify.js')
 const hljs = require('highlight.js')
 const markdownit = require('markdown-it')
 const markdownitFootnote = require('markdown-it-footnote')
-const CodeMirror = require('codemirror')
+
+//Codemirror needs a lot of things.
+require('codemirror/mode/gfm/gfm')
+require('codemirror/mode/htmlmixed/htmlmixed')
+require('codemirror/addon/edit/continuelist')
+require('codemirror/addon/edit/closebrackets')
+
+const CodeMirror = require('codemirror/lib/codemirror')
 
 // Because highlight.js is a bit awkward at times
 var languageOverrides = {
@@ -62,14 +69,18 @@ function setOutput(val) {
 
 
 var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
-    mode: 'gfm',
+    mode: {
+		name: 'gfm',
+		highlightFormatting: true
+	},
     lineNumbers: false,
     matchBrackets: true,
     lineWrapping: true,
     theme: 'genesis',
     extraKeys: {
         "Enter": "newlineAndIndentContinueMarkdownList"
-    }
+    },
+	autoCloseBrackets: '()[]{}\'\'""'
 });
 
 
