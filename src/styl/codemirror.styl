@@ -38,6 +38,22 @@ textBlue = saturation(blue, 60%)
 	border-left: 2px solid blue !important
 
 /*
+	Extra things to highlight codeblocks
+ */
+.cm-s-genesis span
+	&.cm-string
+		color: light-green
+	&.cm-number
+		color: green
+	&.cm-def
+		color: orange
+	&.cm-variable
+		color: blue
+	&.cm-keyword
+		color: pink
+
+
+/*
 	Markdown highlighting
  */
 .cm-s-genesis span
@@ -67,7 +83,7 @@ textBlue = saturation(blue, 60%)
 	&.cm-comment
 	&.cm-tag,
 	&.cm-bracket
-	  	color: syntax-comment-color
+	  	color: lighten(syntax-comment-color, 10%)
 	&.cm-em,
 	&.cm-strong
 		color: light-pink
@@ -75,18 +91,3 @@ textBlue = saturation(blue, 60%)
 		color: gray
 	&.cm-strong
 		font-weight: bold
-
-/*
-	Extra things to highlight codeblocks
- */
-.cm-s-genesis span
-	&.cm-string
-		color: light-green
-	&.cm-number
-		color: green
-	&.cm-def
-		color: orange
-	&.cm-variable
-		color: blue
-	&.cm-keyword
-		color: pink

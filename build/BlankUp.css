@@ -1342,6 +1342,21 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis .CodeMirror-cursor {
   border-left: 2px solid #5caef2 !important;
 }
+.cm-s-genesis span.cm-string {
+  color: #90bb71;
+}
+.cm-s-genesis span.cm-number {
+  color: #90bb71;
+}
+.cm-s-genesis span.cm-def {
+  color: #d2876d;
+}
+.cm-s-genesis span.cm-variable {
+  color: #5caef2;
+}
+.cm-s-genesis span.cm-keyword {
+  color: #c473dc;
+}
 .cm-s-genesis span {
   font-weight: 400;
 }
@@ -1377,7 +1392,7 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-comment,
 .cm-s-genesis span.cm-tag,
 .cm-s-genesis span.cm-bracket {
-  color: #717d7d;
+  color: #7e8b8b;
 }
 .cm-s-genesis span.cm-em,
 .cm-s-genesis span.cm-strong {
@@ -1388,21 +1403,6 @@ span.CodeMirror-selectedtext {
 }
 .cm-s-genesis span.cm-strong {
   font-weight: bold;
-}
-.cm-s-genesis span.cm-string {
-  color: #90bb71;
-}
-.cm-s-genesis span.cm-number {
-  color: #90bb71;
-}
-.cm-s-genesis span.cm-def {
-  color: #d2876d;
-}
-.cm-s-genesis span.cm-variable {
-  color: #5caef2;
-}
-.cm-s-genesis span.cm-keyword {
-  color: #c473dc;
 }
 html,
 body {

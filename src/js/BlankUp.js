@@ -80,11 +80,12 @@ var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
     extraKeys: {
         "Enter": "newlineAndIndentContinueMarkdownList"
     },
-	autoCloseBrackets: '()[]{}\'\'""'
+	autoCloseBrackets: true
 });
 
 
 editor.on('change', update);
+
 
 
 update(editor)
