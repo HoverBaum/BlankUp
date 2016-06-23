@@ -1342,6 +1342,21 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis .CodeMirror-cursor {
   border-left: 2px solid #5caef2 !important;
 }
+.cm-s-genesis span.cm-string {
+  color: #90bb71;
+}
+.cm-s-genesis span.cm-number {
+  color: #90bb71;
+}
+.cm-s-genesis span.cm-def {
+  color: #d2876d;
+}
+.cm-s-genesis span.cm-variable {
+  color: #5caef2;
+}
+.cm-s-genesis span.cm-keyword {
+  color: #c473dc;
+}
 .cm-s-genesis span {
   font-weight: 400;
 }
@@ -1349,19 +1364,19 @@ span.CodeMirror-selectedtext {
   color: #61aeed;
 }
 .cm-s-genesis span.cm-header-1 {
-  font-size: 1.5rem;
+  font-size: 1.762rem;
 }
 .cm-s-genesis span.cm-header-2 {
-  font-size: 1.4rem;
+  font-size: 1.574rem;
 }
 .cm-s-genesis span.cm-header-3 {
-  font-size: 1.3rem;
+  font-size: 1.405rem;
 }
 .cm-s-genesis span.cm-header-4 {
-  font-size: 1.2rem;
+  font-size: 1.254rem;
 }
 .cm-s-genesis span.cm-header-5 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
 }
 .cm-s-genesis span.cm-link {
   color: #72acdc;
@@ -1377,7 +1392,7 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-comment,
 .cm-s-genesis span.cm-tag,
 .cm-s-genesis span.cm-bracket {
-  color: #717d7d;
+  color: #7e8b8b;
 }
 .cm-s-genesis span.cm-em,
 .cm-s-genesis span.cm-strong {
@@ -1389,8 +1404,80 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-strong {
   font-weight: bold;
 }
+@import "../../node_modules/hljs-genesis/build/genesis.css";
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+/*
+	BlankUp
+	The stuff we really care about.
+ */
+.BlankUp {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #3d4954;
+}
+.BlankUp-part,
+.BlankUp__input,
+.BlankUp__preview {
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+.BlankUp__input {
+  width: 100%;
+  padding-top: 1em;
+}
+.BlankUp_show-preview .BlankUp__input {
+  width: 50%;
+}
+.BlankUp__preview {
+  background-color: #fff;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 50%;
+}
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7babd3;
+  opacity: 0.5;
+}
+.BlankUp-preview::webkit-scrollbar-track {
+  background-color: #9ca4b2;
+}
+/*
+	Codemirror arrangements
+ */
+.CodeMirror {
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.CodeMirror-scroll {
+  min-height: 100%;
+}
+.CodeMirror-scroll::-webkit-scrollbar {
+  display: none;
+}
+.CodeMirror-sizer {
+  border-right: 1px solid #37424c !important;
+  max-width: 800px;
+  min-width: 500px;
+}
 a {
-  text-shadow: 0.03em 0 #dadee5, -0.03em 0 #dadee5, 0 0.03em #dadee5, 0 -0.03em #dadee5, 0.06em 0 #dadee5, -0.06em 0 #dadee5, 0.09em 0 #dadee5, -0.09em 0 #dadee5, 0.12em 0 #dadee5, -0.12em 0 #dadee5, 0.15em 0 #dadee5, -0.15em 0 #dadee5;
+  text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
   background-image: linear-gradient(#333, #333);
   background-size: 1px 1px;
   background-repeat: repeat-x;
@@ -1415,64 +1502,4 @@ a:before {
 }
 a:visited {
   color: #333;
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-/*
-	BlankUp
-	The stuff we really care about.
- */
-.BlankUp {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  background-color: #3d4954;
-}
-.BlankUp-part {
-  flex-grow: 1;
-  height: 100%;
-  overflow-y: scroll;
-  padding: 0 2rem;
-}
-.BlankUp-preview {
-  background-color: #fff;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  box-sizing: border-box;
-}
-::-webkit-scrollbar {
-  width: 0.4rem;
-}
-::-webkit-scrollbar-track {
-  background-color: #454c59;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #7babd3;
-  opacity: 0.5;
-}
-.BlankUp-preview::webkit-scrollbar-track {
-  background-color: #9ca4b2;
-}
-/*
-	Codemirror arrangements
- */
-.CodeMirror {
-  height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding-bottom: 2rem;
-}
-.CodeMirror-scroll {
-  max-width: 800px;
-  border-right: 1px solid #37424c;
-}
-.CodeMirror-scroll::-webkit-scrollbar {
-  display: none;
 }

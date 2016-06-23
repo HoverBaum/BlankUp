@@ -1,6 +1,6 @@
 
 //First strap a lot of things in
-//This is donw with webpack
+//This is donw with browserify
 const emojify = require('emojify.js')
 const hljs = require('highlight.js')
 const markdownit = require('markdown-it')
@@ -11,8 +11,10 @@ require('codemirror/mode/gfm/gfm')
 require('codemirror/mode/htmlmixed/htmlmixed')
 require('codemirror/addon/edit/continuelist')
 require('codemirror/addon/edit/closebrackets')
-
 const CodeMirror = require('codemirror/lib/codemirror')
+
+//Also some css
+require('../css/BlankUp.css')
 
 // Because highlight.js is a bit awkward at times
 var languageOverrides = {
