@@ -20,5 +20,5 @@ Roadmap:
 - [ ] Preview toggleable
 - [ ] Let user change the size of editor compared to preview
 - [ ] Make preview scroll alongside editor always and in a nicer way
-- [ ] Come up with a way to set styling
-- [ ] Pack all the things into a single JS file
+- [x] Pack all the things into a single JS file
+- [ ] Manual Testing
