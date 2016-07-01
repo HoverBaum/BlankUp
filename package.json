@@ -36,6 +36,7 @@
     "hljs-genesis": "^1.1.0",
     "markdown-it": "^6.1.0",
     "markdown-it-footnote": "^2.0.0",
+    "markdown-it-task-lists": "^1.2.2",
     "stylus": "^0.54.5"
   },
   "dependencies": {}

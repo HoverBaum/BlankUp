@@ -13,10 +13,9 @@ Roadmap:
 - [x] Use a bundler for NPM packages
 - [ ] Make some improvements to editor
  	- [x] Lists, highlight markers
- 	- [ ] Include something to autoclose things like bold
- 	- [ ] Probably need to improve dynamic size of editor
-- [ ] Also some for the preview
-	- [ ] Todo list to work
+ 	- [ ] Preview toggleable
+- [x] Also some for the preview
+	- [x] Todo list to work
 	- [x] Styling
 - [ ] Preview toggleable
 - [ ] Let user change the size of editor compared to preview

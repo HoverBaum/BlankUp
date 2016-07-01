@@ -1404,6 +1404,9 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-strong {
   font-weight: bold;
 }
+.cm-s-genesis span.cm-formatting-link.cm-link {
+  color: #717d7d;
+}
 @import "../../node_modules/hljs-genesis/build/genesis.css";
 html,
 body {

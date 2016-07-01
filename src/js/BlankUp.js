@@ -5,6 +5,7 @@ const emojify = require('emojify.js')
 const hljs = require('highlight.js')
 const markdownit = require('markdown-it')
 const markdownitFootnote = require('markdown-it-footnote')
+const taskLists = require('markdown-it-task-lists')
 
 //Codemirror needs a lot of things.
 require('codemirror/mode/gfm/gfm')
@@ -41,7 +42,8 @@ var md = markdownit({
             return '';
         }
     })
-    .use(markdownitFootnote);
+    .use(markdownitFootnote)
+    .use(taskLists)
 
 
 function update(e) {
