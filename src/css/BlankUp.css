@@ -1446,7 +1446,11 @@ body {
   background-color: #fff;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  display: none;
   width: 50%;
+}
+.BlankUp_show-preview .BlankUp__preview {
+  display: block;
 }
 ::-webkit-scrollbar {
   width: 0.4rem;

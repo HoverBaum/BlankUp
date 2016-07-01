@@ -17,22 +17,38 @@ const CodeMirror = require('codemirror/lib/codemirror')
 //Also some css
 require('../css/BlankUp.css')
 
-BlankUpEditor = function(container) {
+BlankUpEditor = function createBlankUpEditor(container) {
 
-    container.innerHTML = `
-<div class="BlankUp BlankUp_show-preview">
+    /*
+    <div class="BlankUp BlankUp_show-preview">
 
-    <!-- The part with the editor -->
-    <div class="BlankUp__input">
-        <textarea class="BlankUp-textarea" id="code"></textarea>
+        <!-- The part with the editor -->
+        <div class="BlankUp__input">
+            <textarea class="BlankUp-textarea" id="code"></textarea>
+        </div>
+
+        <!-- HTML preview window -->
+        <div class="BlankUp__preview markdown-body">
+
+        </div>
+
     </div>
+    */
 
-    <!-- HTML preview window -->
-    <div class="BlankUp__preview markdown-body">
-
-    </div>
-
-</div>`
+    container.innerHTML = ''
+    const BlankUpContainer = document.createElement('div')
+    BlankUpContainer.classList.add('BlankUp')
+    const BlankUpInput = document.createElement('div')
+    BlankUpInput.classList.add('BlankUp__input')
+    const BlankUpTextArea = document.createElement('textarea')
+    BlankUpTextArea.classList.add('BlankUp-textarea')
+    BlankUpInput.appendChild(BlankUpTextArea)
+    const BlankUpPreview = document.createElement('div')
+    BlankUpPreview.classList.add('BlankUp__preview')
+    BlankUpPreview.classList.add('markdown-body')
+    BlankUpContainer.appendChild(BlankUpInput)
+    BlankUpContainer.appendChild(BlankUpPreview)
+    container.appendChild(BlankUpContainer)
 
     // Because highlight.js is a bit awkward at times
     var languageOverrides = {
@@ -68,7 +84,7 @@ BlankUpEditor = function(container) {
     }
 
     function setOutput(val) {
-        var out = document.querySelector('.BlankUp__preview');
+        var out = BlankUpPreview
         var old = out.cloneNode(true);
         out.innerHTML = md.render(val);
         emojify.run(out);
@@ -88,8 +104,7 @@ BlankUpEditor = function(container) {
         }
     }
 
-
-    var editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+    var editor = CodeMirror.fromTextArea(BlankUpTextArea, {
         mode: {
     		name: 'gfm',
     		highlightFormatting: true
@@ -104,9 +119,23 @@ BlankUpEditor = function(container) {
     	autoCloseBrackets: true
     });
 
-
     editor.on('change', update);
 
+    function setPreviewVisiblity(visible) {
+		const previewClass = 'BlankUp_show-preview'
+		if(visible === true) {
+			BlankUpContainer.classList.add(previewClass)
+		} else {
+			BlankUpContainer.classList.remove(previewClass)
+		}
+
+    }
+
+    //Initially update the editor and preview.
     update(editor)
+
+    return {
+        previewVisible: setPreviewVisiblity
+    }
 
 }

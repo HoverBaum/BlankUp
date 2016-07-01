@@ -14,10 +14,11 @@ Roadmap:
 - [ ] Make some improvements to editor
  	- [x] Lists, highlight markers
  	- [ ] Preview toggleable
+ 	- [ ] Jump to editor if container is clicked
 - [x] Also some for the preview
 	- [x] Todo list to work
 	- [x] Styling
-- [ ] Preview toggleable
+- [x] Preview toggleable
 - [ ] Let user change the size of editor compared to preview
 - [ ] Make preview scroll alongside editor always and in a nicer way
 - [x] Pack all the things into a single JS file
