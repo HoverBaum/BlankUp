@@ -1,4 +1,3 @@
-
 //First strap a lot of things in
 //This is donw with browserify
 const emojify = require('emojify.js')
@@ -78,33 +77,43 @@ BlankUpEditor = function createBlankUpEditor(container) {
         .use(markdownitFootnote)
         .use(taskLists)
 
-
-    function update(e) {
-        setOutput(e.getValue())
+	/**
+	 *   Update the preview
+	 *   @param  {DOM Element} e - Textarea from which to get the raw mardown.
+	 */
+    function updatePreview(e) {
+        previewMarkdown(e.getValue())
     }
 
-    function setOutput(val) {
-        var out = BlankUpPreview
-        var old = out.cloneNode(true)
-        out.innerHTML = md.render(val)
+	/**
+	 *	 Preview markdown using markdown-it.
+	 *   @param {String} rawMarkdown - The markdown ot be previewed
+	 */
+    function previewMarkdown(rawMarkdown) {
+        const out = BlankUpPreview
+        const old = out.cloneNode(true)
+        out.innerHTML = md.render(rawMarkdown)
         emojify.run(out)
 
     	//Scroll to the first node that changed.
-        var allold = old.getElementsByTagName("*");
+        const allold = old.getElementsByTagName("*");
         if (allold === undefined) return
-
-        var allnew = out.getElementsByTagName("*");
+        const allnew = out.getElementsByTagName("*");
         if (allnew === undefined) return
-
         for (var i = 0, max = Math.min(allold.length, allnew.length); i < max; i++) {
             if (!allold[i].isEqualNode(allnew[i])) {
-                out.scrollTop = allnew[i].offsetTop
-                return
+				const maxScroll = out.scrollHeight - out.offsetHeight
+				if(allnew[i].offsetTop <= maxScroll) {
+					out.scrollTop = allnew[i].offsetTop
+				} else {
+					out.scrollTop = maxScroll
+				}
             }
         }
     }
 
-    var editor = CodeMirror.fromTextArea(BlankUpTextArea, {
+	//Create the Codemirror editor.
+    const editor = CodeMirror.fromTextArea(BlankUpTextArea, {
         mode: {
     		name: 'gfm',
     		highlightFormatting: true
@@ -119,7 +128,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
     	autoCloseBrackets: true
     });
 
-    editor.on('change', update)
+    editor.on('change', updatePreview)
 
 	//Position the cursor inside the eidtor if the wrapper gets clicked.
 	BlankUpInput.addEventListener('click', function(e) {
@@ -142,6 +151,10 @@ BlankUpEditor = function createBlankUpEditor(container) {
 		}
 	})
 
+	/**
+	 *   Set the visiblity of the preview.
+	 *   @param {Boolean} visible - If the preview should be visible or not.
+	 */
     function setPreviewVisiblity(visible) {
 		const previewClass = 'BlankUp_show-preview'
 		if(visible === true) {
@@ -152,8 +165,8 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
     }
 
-    //Initially update the editor and preview.
-    update(editor)
+    //Initially update the preview.
+    updatePreview(editor)
 
     return {
         previewVisible: setPreviewVisiblity
