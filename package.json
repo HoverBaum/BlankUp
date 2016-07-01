@@ -4,7 +4,6 @@
   "description": "Markdown editor with clarity +1",
   "main": "main.js",
   "scripts": {
-    "start": "electron main.js",
     "stylus": "node node_modules/stylus/bin/stylus src/styl/BlankUp.styl --out src/css --watch",
     "watchify": "node node_modules/watchify/bin/cmd -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v"
   },
@@ -13,7 +12,6 @@
     "url": "git+https://github.com/HoverBaum/BlankUp.git"
   },
   "keywords": [
-    "Electron",
     "Markdown",
     "Editor"
   ],
@@ -27,7 +25,6 @@
     "browserify": "^13.0.1",
     "browserify-css": "^0.9.1",
     "codemirror": "^5.15.2",
-    "electron-prebuilt": "^1.2.0",
     "emojify.js": "^1.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "highlight.js": "^9.4.0",
