@@ -1,4 +1,4 @@
-# BlankUp
+<img src="/logo.jpg" width="300" style="margin: 0 auto;display:block;">
 
 Markdown editor.
 
