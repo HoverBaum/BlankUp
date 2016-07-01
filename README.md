@@ -18,7 +18,7 @@ Roadmap:
 	- [x] Todo list to work
 	- [x] Styling
 - [x] Preview toggleable
-- [ ] Make preview scroll alongside editor always and in a nicer way
+- [x] Make preview scroll alongside editor always and in a nicer way
 - [x] Pack all the things into a single JS file
 - [ ] Documentation
 - [ ] Manual Testing

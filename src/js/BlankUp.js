@@ -16,6 +16,12 @@ const CodeMirror = require('codemirror/lib/codemirror')
 //Also some css
 require('../css/BlankUp.css')
 
+const forEach = (array, callback, scope) => {
+	for (var i = 0; i < array.length; i++) {
+		callback.call(scope, array[i], i)
+	}
+}
+
 BlankUpEditor = function createBlankUpEditor(container) {
 
     /*
@@ -62,8 +68,8 @@ BlankUpEditor = function createBlankUpEditor(container) {
     //Get an instance of markdown-it to parse the markdown to HTML
     var md = markdownit({
             html: true,
-    		linkify: true,
-      		typographer: true,
+            linkify: true,
+            typographer: true,
             highlight: function(code, lang) {
                 if (languageOverrides[lang]) lang = languageOverrides[lang];
                 if (lang && hljs.getLanguage(lang)) {
@@ -77,47 +83,47 @@ BlankUpEditor = function createBlankUpEditor(container) {
         .use(markdownitFootnote)
         .use(taskLists)
 
-	/**
-	 *   Update the preview
-	 *   @param  {DOM Element} e - Textarea from which to get the raw mardown.
-	 */
+    /**
+     *   Update the preview
+     *   @param  {DOM Element} e - Textarea from which to get the raw mardown.
+     */
     function updatePreview(e) {
         previewMarkdown(e.getValue())
     }
 
-	/**
-	 *	 Preview markdown using markdown-it.
-	 *   @param {String} rawMarkdown - The markdown ot be previewed
-	 */
+    /**
+     *	 Preview markdown using markdown-it.
+     *   @param {String} rawMarkdown - The markdown ot be previewed
+     */
     function previewMarkdown(rawMarkdown) {
         const out = BlankUpPreview
         const old = out.cloneNode(true)
         out.innerHTML = md.render(rawMarkdown)
         emojify.run(out)
 
-    	//Scroll to the first node that changed.
+        //Scroll to the first node that changed.
         const allold = old.getElementsByTagName("*");
         if (allold === undefined) return
         const allnew = out.getElementsByTagName("*");
         if (allnew === undefined) return
         for (var i = 0, max = Math.min(allold.length, allnew.length); i < max; i++) {
             if (!allold[i].isEqualNode(allnew[i])) {
-				const maxScroll = out.scrollHeight - out.offsetHeight
-				if(allnew[i].offsetTop <= maxScroll) {
-					out.scrollTop = allnew[i].offsetTop
-				} else {
-					out.scrollTop = maxScroll
-				}
+                const maxScroll = out.scrollHeight - out.offsetHeight
+                if (allnew[i].offsetTop <= maxScroll) {
+                    out.scrollTop = allnew[i].offsetTop
+                } else {
+                    out.scrollTop = maxScroll
+                }
             }
         }
     }
 
-	//Create the Codemirror editor.
+    //Create the Codemirror editor.
     const editor = CodeMirror.fromTextArea(BlankUpTextArea, {
         mode: {
-    		name: 'gfm',
-    		highlightFormatting: true
-    	},
+            name: 'gfm',
+            highlightFormatting: true
+        },
         lineNumbers: false,
         matchBrackets: true,
         lineWrapping: true,
@@ -125,43 +131,55 @@ BlankUpEditor = function createBlankUpEditor(container) {
         extraKeys: {
             "Enter": "newlineAndIndentContinueMarkdownList"
         },
-    	autoCloseBrackets: true
+        autoCloseBrackets: true
     });
 
     editor.on('change', updatePreview)
 
-	//Position the cursor inside the eidtor if the wrapper gets clicked.
-	BlankUpInput.addEventListener('click', function(e) {
-		const wrapperClick = /(^CodeMirror[^-]|BlankUp__input)/.test(e.target.className)
-		if(wrapperClick) {
-			const x = e.offsetX
-			const y = e.offsetY
-			const lineHeight = BlankUpInput.querySelector('.CodeMirror-code > pre').offsetHeight
-			const lineNumber = Math.floor(y / lineHeight)
-			const sizer = BlankUpInput.querySelector('.CodeMirror-sizer')
-			const sizerLeft = sizer.getBoundingClientRect().left
-			const sizerCenter = sizerLeft + sizer.offsetWidth / 2
-			const leftOfEditor = x < sizerCenter ? true : false
-			editor.focus()
-			if(leftOfEditor) {
-				editor.setCursor({line: lineNumber, ch: 0})
-			} else {
-				editor.setCursor({line: lineNumber})
-			}
-		}
-	})
+    BlankUpInput.addEventListener('scroll', (e) => {
+        const inputScroll = BlankUpInput.scrollTop
+        const ratio = (BlankUpPreview.scrollHeight - BlankUpPreview.offsetHeight) / (BlankUpInput.scrollHeight - BlankUpInput.offsetHeight)
+        const scrollTop = inputScroll * ratio
+        BlankUpPreview.scrollTop = scrollTop
+    })
 
-	/**
-	 *   Set the visiblity of the preview.
-	 *   @param {Boolean} visible - If the preview should be visible or not.
-	 */
+    //Position the cursor inside the eidtor if the wrapper gets clicked.
+    BlankUpInput.addEventListener('click', function(e) {
+        const wrapperClick = /(^CodeMirror[^-]|BlankUp__input)/.test(e.target.className)
+        if (wrapperClick) {
+            const x = e.offsetX
+            const y = e.offsetY
+            const lineHeight = BlankUpInput.querySelector('.CodeMirror-code > pre').offsetHeight
+            const lineNumber = Math.floor(y / lineHeight)
+            const sizer = BlankUpInput.querySelector('.CodeMirror-sizer')
+            const sizerLeft = sizer.getBoundingClientRect().left
+            const sizerCenter = sizerLeft + sizer.offsetWidth / 2
+            const leftOfEditor = x < sizerCenter ? true : false
+            editor.focus()
+            if (leftOfEditor) {
+                editor.setCursor({
+                    line: lineNumber,
+                    ch: 0
+                })
+            } else {
+                editor.setCursor({
+                    line: lineNumber
+                })
+            }
+        }
+    })
+
+    /**
+     *   Set the visiblity of the preview.
+     *   @param {Boolean} visible - If the preview should be visible or not.
+     */
     function setPreviewVisiblity(visible) {
-		const previewClass = 'BlankUp_show-preview'
-		if(visible === true) {
-			BlankUpContainer.classList.add(previewClass)
-		} else {
-			BlankUpContainer.classList.remove(previewClass)
-		}
+        const previewClass = 'BlankUp_show-preview'
+        if (visible === true) {
+            BlankUpContainer.classList.add(previewClass)
+        } else {
+            BlankUpContainer.classList.remove(previewClass)
+        }
 
     }
 
