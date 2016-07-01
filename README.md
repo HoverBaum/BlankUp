@@ -11,10 +11,9 @@ Roadmap:
 - [x] Refactore styling to use Stylus
 - [x] Move to a Genesis like color scheme because I love it
 - [x] Use a bundler for NPM packages
-- [ ] Make some improvements to editor
+- [x] Make some improvements to editor
  	- [x] Lists, highlight markers
- 	- [ ] Preview toggleable
- 	- [ ] Jump to editor if container is clicked
+ 	- [x] Jump to editor if container is clicked
 - [x] Also some for the preview
 	- [x] Todo list to work
 	- [x] Styling

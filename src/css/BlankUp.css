@@ -1438,6 +1438,7 @@ body {
 .BlankUp__input {
   width: 100%;
   padding-top: 1em;
+  cursor: text;
 }
 .BlankUp_show-preview .BlankUp__input {
   width: 50%;
@@ -1471,6 +1472,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  cursor: text;
 }
 .CodeMirror-scroll {
   min-height: 100%;

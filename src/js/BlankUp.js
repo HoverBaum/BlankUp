@@ -121,6 +121,27 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
     editor.on('change', update)
 
+	//Position the cursor inside the eidtor if the wrapper gets clicked.
+	BlankUpInput.addEventListener('click', function(e) {
+		const wrapperClick = /(^CodeMirror[^-]|BlankUp__input)/.test(e.target.className)
+		if(wrapperClick) {
+			const x = e.offsetX
+			const y = e.offsetY
+			const lineHeight = BlankUpInput.querySelector('.CodeMirror-code > pre').offsetHeight
+			const lineNumber = Math.floor(y / lineHeight)
+			const sizer = BlankUpInput.querySelector('.CodeMirror-sizer')
+			const sizerLeft = sizer.getBoundingClientRect().left
+			const sizerCenter = sizerLeft + sizer.offsetWidth / 2
+			const leftOfEditor = x < sizerCenter ? true : false
+			editor.focus()
+			if(leftOfEditor) {
+				editor.setCursor({line: lineNumber, ch: 0})
+			} else {
+				editor.setCursor({line: lineNumber})
+			}
+		}
+	})
+
     function setPreviewVisiblity(visible) {
 		const previewClass = 'BlankUp_show-preview'
 		if(visible === true) {
