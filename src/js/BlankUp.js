@@ -72,7 +72,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
                         return hljs.highlight(lang, code).value;
                     } catch (e) {}
                 }
-                return '';
+                return ''
             }
         })
         .use(markdownitFootnote)
@@ -80,26 +80,26 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
 
     function update(e) {
-        setOutput(e.getValue());
+        setOutput(e.getValue())
     }
 
     function setOutput(val) {
         var out = BlankUpPreview
-        var old = out.cloneNode(true);
-        out.innerHTML = md.render(val);
-        emojify.run(out);
+        var old = out.cloneNode(true)
+        out.innerHTML = md.render(val)
+        emojify.run(out)
 
     	//Scroll to the first node that changed.
         var allold = old.getElementsByTagName("*");
-        if (allold === undefined) return;
+        if (allold === undefined) return
 
         var allnew = out.getElementsByTagName("*");
-        if (allnew === undefined) return;
+        if (allnew === undefined) return
 
         for (var i = 0, max = Math.min(allold.length, allnew.length); i < max; i++) {
             if (!allold[i].isEqualNode(allnew[i])) {
-                out.scrollTop = allnew[i].offsetTop;
-                return;
+                out.scrollTop = allnew[i].offsetTop
+                return
             }
         }
     }
@@ -119,7 +119,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
     	autoCloseBrackets: true
     });
 
-    editor.on('change', update);
+    editor.on('change', update)
 
     function setPreviewVisiblity(visible) {
 		const previewClass = 'BlankUp_show-preview'

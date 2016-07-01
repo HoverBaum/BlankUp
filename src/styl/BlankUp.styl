@@ -77,18 +77,21 @@ body
 	flex-direction: row
 	justify-content: center
 
+maxWidth = 800px
+
 //This makes sure that marked lines are all the same size
 //And defines how wide the area for text is.
 .CodeMirror-scroll
 	min-height: 100%
+	max-width: maxWidth
+	width: 80%
 	&::-webkit-scrollbar
 		display: none
 
 .CodeMirror-sizer
 	border-right: 1px solid darken(syntax-background-color, 10%) !important
-	max-width: 800px
+	max-width: maxWidth
 	min-width: 500px
-
 
 // Make links nice, for preview
 a

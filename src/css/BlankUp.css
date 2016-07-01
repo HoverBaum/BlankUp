@@ -1474,6 +1474,8 @@ body {
 }
 .CodeMirror-scroll {
   min-height: 100%;
+  max-width: 800px;
+  width: 80%;
 }
 .CodeMirror-scroll::-webkit-scrollbar {
   display: none;
