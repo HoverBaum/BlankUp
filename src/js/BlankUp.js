@@ -1,10 +1,10 @@
 //First strap a lot of things in
 //This is donw with browserify
-const emojify = require('emojify.js')
 const hljs = require('highlight.js')
 const markdownit = require('markdown-it')
 const markdownitFootnote = require('markdown-it-footnote')
 const taskLists = require('markdown-it-task-lists')
+const mdEmoji = require('markdown-it-emoji')
 
 //Codemirror needs a lot of things.
 require('codemirror/mode/gfm/gfm')
@@ -82,6 +82,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
         })
         .use(markdownitFootnote)
         .use(taskLists)
+		.use(mdEmoji)
 
     /**
      *   Update the preview
@@ -99,7 +100,6 @@ BlankUpEditor = function createBlankUpEditor(container) {
         const out = BlankUpPreview
         const old = out.cloneNode(true)
         out.innerHTML = md.render(rawMarkdown)
-        emojify.run(out)
 
         //Scroll to the first node that changed.
         const allold = old.getElementsByTagName("*");
