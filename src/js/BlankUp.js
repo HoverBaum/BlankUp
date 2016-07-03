@@ -61,10 +61,6 @@ BlankUpEditor = function createBlankUpEditor(container) {
         html: 'xml'
     };
 
-    emojify.setConfig({
-        img_dir: 'emoji'
-    });
-
     //Get an instance of markdown-it to parse the markdown to HTML
     var md = markdownit({
             html: true,
