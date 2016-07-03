@@ -2,7 +2,7 @@
   "name": "BlankUp",
   "version": "0.1.0",
   "description": "Markdown editor with clarity +1",
-  "main": "main.js",
+  "main": "build/BlankUp.js",
   "scripts": {
     "stylus": "node node_modules/stylus/bin/stylus src/styl/BlankUp.styl --out src/css --watch",
     "watchify": "node node_modules/watchify/bin/cmd -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v"
@@ -20,6 +20,9 @@
   "bugs": {
     "url": "https://github.com/HoverBaum/BlankUp/issues"
   },
+  "files": [
+	"build"  
+  ],
   "homepage": "https://github.com/HoverBaum/BlankUp",
   "devDependencies": {
     "browserify": "^13.0.1",
