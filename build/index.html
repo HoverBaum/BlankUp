@@ -18,5 +18,19 @@
 		<script>
 			BUEditor = BlankUpEditor(document.querySelector('#editor'))
 		</script>
+		<script>
+			let previewState = false
+			BUEditor.previewVisible(previewState)
+
+			window.addEventListener('keypress', (e) => {
+
+
+				//Make Ctrl+M toggle the preview.
+				if(e.ctrlKey === true && e.keyCode === 10) {
+					previewState = !previewState
+					BUEditor.previewVisible(previewState)
+				}
+			})
+		</script>
 	</body>
 </html>
