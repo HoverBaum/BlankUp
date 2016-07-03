@@ -1,8 +1,12 @@
 <img src="/logo.jpg" width="300" style="margin: 0 auto;display:block;">
 
-Markdown editor.
+A clear and simple markdown editor.
 
-Build on a lot of cool things soon to be named here and hopefully Electron for native apps.
+Build on and using:
+- CodeMirror
+- Markdown-it
+- Browserify
+- Stylus
 
 Huge props to [markdown-editor](https://github.com/jbt/markdown-editor) where the basics of this came from. After that it really is mainly sugar.
 
