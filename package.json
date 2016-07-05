@@ -25,7 +25,8 @@
     "url": "https://github.com/HoverBaum/BlankUp/issues"
   },
   "files": [
-    "build"
+    "build",
+	"README.md"
   ],
   "homepage": "https://github.com/HoverBaum/BlankUp",
   "devDependencies": {
