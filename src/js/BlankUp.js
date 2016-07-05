@@ -1,3 +1,7 @@
+/**
+ *   @namespace BlankUp
+ */
+
 //First strap a lot of things in
 //This is donw with browserify
 const hljs = require('highlight.js')
@@ -22,6 +26,11 @@ const forEach = (array, callback, scope) => {
 	}
 }
 
+/**
+ *   Create an instance of a BlankUp Markdown editor in a given element.
+ *   @param {DOMElement} container 	- The Element of the DOM in which to create a BlankUp editor.
+ *   @return {BlankUp} 				- An instance of a BlankUp editor.
+ */
 BlankUpEditor = function createBlankUpEditor(container) {
 
     /*
@@ -82,7 +91,8 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
     /**
      *   Update the preview
-     *   @param  {DOM Element} e - Textarea from which to get the raw mardown.
+     *   @param  {DOMElement} e - Textarea from which to get the raw mardown.
+     *   @private
      */
     function updatePreview(e) {
         previewMarkdown(e.getValue())
@@ -91,6 +101,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
     /**
      *	 Preview markdown using markdown-it.
      *   @param {String} rawMarkdown - The markdown ot be previewed
+     *   @private
      */
     function previewMarkdown(rawMarkdown) {
         const out = BlankUpPreview
@@ -132,6 +143,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
     editor.on('change', updatePreview)
 
+	//Make the preview scroll along nicely.
     BlankUpInput.addEventListener('scroll', (e) => {
         const inputScroll = BlankUpInput.scrollTop
         const ratio = (BlankUpPreview.scrollHeight - BlankUpPreview.offsetHeight) / (BlankUpInput.scrollHeight - BlankUpInput.offsetHeight)
@@ -168,6 +180,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
     /**
      *   Set the visiblity of the preview.
      *   @param {Boolean} visible - If the preview should be visible or not.
+     *   @method BlankUp#previewVisible
      */
     function setPreviewVisiblity(visible) {
         const previewClass = 'BlankUp_show-preview'

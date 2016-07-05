@@ -5,7 +5,11 @@
   "main": "build/BlankUp.js",
   "scripts": {
     "stylus": "node node_modules/stylus/bin/stylus src/styl/BlankUp.styl --out src/css --use url --with \"{limit: false}\" --watch",
-    "watchify": "node node_modules/watchify/bin/cmd -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v"
+    "watchify": "node node_modules/watchify/bin/cmd -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v",
+    "jsdoc": "./node_modules/.bin/jsdoc --configure docs/config/.jsdoc.json --verbose",
+    "serve-docs": "./node_modules/.bin/live-server ./docs",
+    "readme": "node_modules/.bin/jsdoc2md \"src/js/**/*.js\" --template docs/templates/readme.md > README.md",
+	"docs": "npm run jsdoc && npm run readme"
   },
   "repository": {
     "type": "git",
@@ -28,9 +32,13 @@
     "browserify": "^13.0.1",
     "browserify-css": "^0.9.1",
     "codemirror": "^5.16.0",
+    "docdash": "^0.4.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "highlight.js": "^9.4.0",
     "hljs-genesis": "^1.1.0",
+    "jsdoc": "^3.4.0",
+    "jsdoc-to-markdown": "^1.3.6",
+    "live-server": "^1.0.0",
     "markdown-it": "^6.1.0",
     "markdown-it-emoji": "^1.2.0",
     "markdown-it-footnote": "^2.0.0",
