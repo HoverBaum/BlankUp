@@ -1,3 +1,4 @@
+
 /**
  *   @namespace BlankUp
  */
@@ -31,7 +32,7 @@ const forEach = (array, callback, scope) => {
  *   @param {DOMElement} container 	- The Element of the DOM in which to create a BlankUp editor.
  *   @return {BlankUp} 				- An instance of a BlankUp editor.
  */
-BlankUpEditor = function createBlankUpEditor(container) {
+const BlankUp = function createBlankUpEditor(container) {
 
     /*
     <div class="BlankUp BlankUp_show-preview">
@@ -221,4 +222,8 @@ BlankUpEditor = function createBlankUpEditor(container) {
 		editor
     }
 
+}
+
+if(window !== undefined){
+	window.BlankUp = BlankUp
 }
