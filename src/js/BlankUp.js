@@ -179,7 +179,7 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
     /**
      *   Set the visiblity of the preview.
-     *   @param {Boolean} visible - If the preview should be visible or not.
+     *   @param {Boolean} visible 	- If the preview should be visible or not.
      *   @method BlankUp#previewVisible
      */
     function setPreviewVisiblity(visible) {
@@ -192,11 +192,33 @@ BlankUpEditor = function createBlankUpEditor(container) {
 
     }
 
+	/**
+	 *   Set the current conent of the editor to a given markdown.
+	 *   @param {String} markdown 	- New content of the editor.
+	 *   @method BlankUp#setMarkdown
+	 *
+	 */
+	function setMarkdown(markdown) {
+		editor.setValue(markdown)
+	}
+
+	/**
+	 *   Get the current content of the editor.
+	 *   @return {String}			- The current markdown content of the editor.
+	 *   @method BlankUp#getMarkdown
+	 */
+	function getMarkdown() {
+		return editor.getValue()
+	}
+
     //Initially update the preview.
     updatePreview(editor)
 
     return {
-        previewVisible: setPreviewVisiblity
+        previewVisible: setPreviewVisiblity,
+		setMarkdown,
+		getMarkdown,
+		editor
     }
 
 }

@@ -35,6 +35,12 @@ This is a well working beta version. In fact if you only want an editor for mark
 
 ## BlankUp : <code>object</code>
 **Kind**: global namespace  
+
+* [BlankUp](#BlankUp) : <code>object</code>
+    * [.previewVisible(visible)](#BlankUp+previewVisible)
+    * [.setMarkdown(markdown)](#BlankUp+setMarkdown)
+    * [.getMarkdown()](#BlankUp+getMarkdown) ⇒ <code>String</code>
+
 <a name="BlankUp+previewVisible"></a>
 
 ### blankUp.previewVisible(visible)
@@ -46,6 +52,24 @@ Set the visiblity of the preview.
 | --- | --- | --- |
 | visible | <code>Boolean</code> | If the preview should be visible or not. |
 
+<a name="BlankUp+setMarkdown"></a>
+
+### blankUp.setMarkdown(markdown)
+Set the current conent of the editor to a given markdown.
+
+**Kind**: instance method of <code>[BlankUp](#BlankUp)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| markdown | <code>String</code> | New content of the editor. |
+
+<a name="BlankUp+getMarkdown"></a>
+
+### blankUp.getMarkdown() ⇒ <code>String</code>
+Get the current content of the editor.
+
+**Kind**: instance method of <code>[BlankUp](#BlankUp)</code>  
+**Returns**: <code>String</code> - - The current markdown content of the editor.  
 <a name="BlankUpEditor"></a>
 
 ## BlankUpEditor(container) ⇒ <code>[BlankUp](#BlankUp)</code>
