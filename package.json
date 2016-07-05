@@ -1,6 +1,6 @@
 {
   "name": "BlankUp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Markdown editor with clarity +1",
   "main": "build/BlankUp.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "files": [
     "build",
-	"README.md"
+    "README.md"
   ],
   "homepage": "https://github.com/HoverBaum/BlankUp",
   "devDependencies": {
