@@ -27,7 +27,7 @@
   "devDependencies": {
     "browserify": "^13.0.1",
     "browserify-css": "^0.9.1",
-    "codemirror": "^5.15.2",
+    "codemirror": "^5.16.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "highlight.js": "^9.4.0",
     "hljs-genesis": "^1.1.0",

@@ -1283,7 +1283,8 @@ span.CodeMirror-selectedtext {
 .cm-s-genesis span.cm-url,
 .cm-s-genesis span.cm-comment,
 .cm-s-genesis span.cm-tag,
-.cm-s-genesis span.cm-bracket {
+.cm-s-genesis span.cm-bracket,
+.cm-s-genesis span.cm-formatting.cm-link {
   color: #7e8b8b;
 }
 .cm-s-genesis span.cm-em,
@@ -1295,9 +1296,6 @@ span.CodeMirror-selectedtext {
 }
 .cm-s-genesis span.cm-strong {
   font-weight: bold;
-}
-.cm-s-genesis span.cm-formatting-link.cm-link {
-  color: #717d7d;
 }
 @import "../../node_modules/hljs-genesis/build/genesis.css";
 html,
