@@ -2,7 +2,7 @@
 
 A clear and simple markdown editor.
 
-![BlankUp in action.](img/blankUpDemo.png)
+![BlankUp in action.](img/BlankUpDemo.png)
 
 # Features
 

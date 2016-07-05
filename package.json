@@ -9,7 +9,7 @@
     "jsdoc": "./node_modules/.bin/jsdoc --configure docs/config/.jsdoc.json --verbose",
     "serve-docs": "./node_modules/.bin/live-server ./docs",
     "readme": "node_modules/.bin/jsdoc2md \"src/js/**/*.js\" --template docs/templates/readme.md > README.md",
-	"docs": "npm run jsdoc && npm run readme"
+    "docs": "node ./node_modules/concurrently/src/main.js \"npm run readme\" \"npm run jsdoc\""
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "browserify": "^13.0.1",
     "browserify-css": "^0.9.1",
     "codemirror": "^5.16.0",
+    "concurrently": "^2.1.0",
     "docdash": "^0.4.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "highlight.js": "^9.4.0",
