@@ -21,6 +21,8 @@ const CodeMirror = require('codemirror/lib/codemirror')
 //Also some css
 require('../css/BlankUp.css')
 
+const Events = require('./pubSub')
+
 const forEach = (array, callback, scope) => {
 	for (var i = 0; i < array.length; i++) {
 		callback.call(scope, array[i], i)
@@ -144,6 +146,9 @@ const BlankUp = function createBlankUpEditor(container) {
     });
 
     editor.on('change', updatePreview)
+	editor.on('change', (codeMirrorInstance) => {
+		Events.emit('change', codeMirrorInstance.getValue())
+	})
 
 	//Make the preview scroll along nicely.
     BlankUpInput.addEventListener('scroll', (e) => {
@@ -214,6 +219,15 @@ const BlankUp = function createBlankUpEditor(container) {
 	}
 
 	/**
+	 *   Subscribe a listener to an event.
+	 *   @param {String} channel  	- The event to subscribe to.
+	 *   @param {Function} listener - Function to call when event happens.
+	 */
+	function registerEventListener(channel, listener) {
+		Events.subscribe(channel, listener)
+	}
+
+	/**
 	 *   Get the current content of the editor.
 	 *   @return {String}			- The current markdown content of the editor.
 	 *   @method BlankUp#getMarkdown
@@ -229,7 +243,8 @@ const BlankUp = function createBlankUpEditor(container) {
         previewVisible: setPreviewVisiblity,
 		setMarkdown,
 		getMarkdown,
-		editor
+		editor,
+		on: registerEventListener
     }
 
 }
