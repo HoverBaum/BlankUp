@@ -139,7 +139,8 @@ const BlankUp = function createBlankUpEditor(container) {
         extraKeys: {
             "Enter": "newlineAndIndentContinueMarkdownList"
         },
-        autoCloseBrackets: true
+        autoCloseBrackets: true,
+		dragDrop: false
     });
 
     editor.on('change', updatePreview)
@@ -158,9 +159,18 @@ const BlankUp = function createBlankUpEditor(container) {
         if (wrapperClick) {
             const x = e.offsetX
             const y = e.offsetY
-            const lineHeight = BlankUpInput.querySelector('.CodeMirror-code > pre').offsetHeight
-            const lineNumber = Math.floor(y / lineHeight)
-            const sizer = BlankUpInput.querySelector('.CodeMirror-sizer')
+			let lineNumber = 0
+			const lines = BlankUpInput.querySelectorAll('.CodeMirror-line')
+			for(var i = 0; i < lines.length; i++) {
+				const line = lines[i]
+				if(line !== undefined) {
+					if(line.offsetTop < y && line.offsetTop + line.offsetHeight > y) {
+						lineNumber = i
+					}
+				}
+			}
+
+			const sizer = BlankUpInput.querySelector('.CodeMirror-sizer')
             const sizerLeft = sizer.getBoundingClientRect().left
             const sizerCenter = sizerLeft + sizer.offsetWidth / 2
             const leftOfEditor = x < sizerCenter ? true : false
