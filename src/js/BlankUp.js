@@ -146,7 +146,10 @@ const BlankUp = function createBlankUpEditor(container) {
     });
 
     editor.on('change', updatePreview)
-	editor.on('change', (codeMirrorInstance) => {
+	editor.on('change', (codeMirrorInstance, changes) => {
+
+		//Don't report the setting of values as a change.
+		if(changes.origin === 'setValue') return
 		Events.emit('change', codeMirrorInstance.getValue())
 	})
 
