@@ -152,9 +152,15 @@ const BlankUp = function createBlankUpEditor(container) {
 		dragDrop: false
     });
 
+	//Handle editor changes.
     editor.on('change', updatePreview)
 	editor.on('change', (codeMirrorInstance, changes) => {
-		Events.emit('change', codeMirrorInstance.getValue(), changes.origin)
+		//Don't report the setting of values as a change.
+		if(changes.origin === 'setValue') return
+		Events.emit(BlankUpId, {
+			channel: 'change',
+			origin: changes.origin
+		})
 	})
 
 	//Make the preview scroll along nicely.
@@ -231,9 +237,9 @@ const BlankUp = function createBlankUpEditor(container) {
 	 *   @param {Function} listener - Function to call when event happens.
 	 */
 	function registerEventListener(channel, listener) {
-		Events.subscribe(BlankUpId, function(messageChannel, ...args) {
-			if(messageChannel === channel) {
-				listener(...args)
+		Events.subscribe(BlankUpId, function(event) {
+			if(event.channel === channel) {
+				listener(event)
 			}
 		})
 	}

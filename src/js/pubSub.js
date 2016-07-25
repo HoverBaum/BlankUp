@@ -8,7 +8,7 @@ const channelEvents = new Map()
  *   Subscribe to a channel.
  *
  *   @param  {string}   channel    - Channel identifier
- *   @param  {function} [callback] - Function call upon event.
+ *   @param  {function} callback   - Function call upon event.
  */
 const subscribe = (channel, callback) => {
 
@@ -26,8 +26,7 @@ const subscribe = (channel, callback) => {
  *   Emit something over a channel.
  *
  *   @param  {string} channel - Channel identifier.
- *   @param  {string} [event] - Event identifier.
- *   @param  {...any} extras  - Any extra parammeters to emit.
+ *   @param  {Object} event   - THe event.
  */
 const emit = (channel, event) => {
 
@@ -36,11 +35,9 @@ const emit = (channel, event) => {
         return false
     }
 
-    //Send the message, that is to say all extra arguments.
-    let allArgs = Array.prototype.slice.call(arguments, 1);
     channels.get(channel).forEach(subscription => {
         if (subscription) {
-            subscription(...allArgs)
+            subscription(event)
         }
     })
 }
