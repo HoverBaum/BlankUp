@@ -23,6 +23,10 @@ require('../css/BlankUp.css')
 
 const Events = require('./pubSub')
 
+const generateId = () => {
+	return (Date.now() + Math.random().toString(36).substr(2, 9)).toUpperCase()
+}
+
 const forEach = (array, callback, scope) => {
 	for (var i = 0; i < array.length; i++) {
 		callback.call(scope, array[i], i)
@@ -35,6 +39,9 @@ const forEach = (array, callback, scope) => {
  *   @return {BlankUp} 				- An instance of a BlankUp editor.
  */
 const BlankUp = function createBlankUpEditor(container) {
+
+	//Create an id used for channels etc.
+	const BlankUpId = generateId()
 
     /*
     <div class="BlankUp BlankUp_show-preview">
@@ -146,8 +153,8 @@ const BlankUp = function createBlankUpEditor(container) {
     });
 
     editor.on('change', updatePreview)
-	editor.on('change', (codeMirrorInstance) => {
-		Events.emit('change', codeMirrorInstance.getValue())
+	editor.on('change', (codeMirrorInstance, changes) => {
+		Events.emit('change', codeMirrorInstance.getValue(), changes.origin)
 	})
 
 	//Make the preview scroll along nicely.
@@ -224,7 +231,11 @@ const BlankUp = function createBlankUpEditor(container) {
 	 *   @param {Function} listener - Function to call when event happens.
 	 */
 	function registerEventListener(channel, listener) {
-		Events.subscribe(channel, listener)
+		Events.subscribe(BlankUpId, function(messageChannel, ...args) {
+			if(messageChannel === channel) {
+				listener(...args)
+			}
+		})
 	}
 
 	/**
