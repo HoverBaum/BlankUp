@@ -1254,6 +1254,7 @@ span.CodeMirror-selectedtext {
 }
 .cm-s-genesis span.cm-header {
   color: #61aeed;
+  margin-top: 0.5em;
 }
 .cm-s-genesis span.cm-header-1 {
   font-size: 1.762rem;
@@ -1362,6 +1363,9 @@ body {
   flex-direction: row;
   justify-content: center;
   cursor: text;
+}
+.CodeMirror-line {
+  padding-top: 0.5em;
 }
 .CodeMirror-scroll {
   min-height: 100%;

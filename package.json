@@ -4,12 +4,14 @@
   "description": "Markdown editor with clarity +1",
   "main": "build/BlankUp.js",
   "scripts": {
-    "stylus": "node node_modules/stylus/bin/stylus src/styl/BlankUp.styl --out src/css --use url --with \"{limit: false}\" --watch",
-    "watchify": "node node_modules/watchify/bin/cmd -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v",
-    "jsdoc": "./node_modules/.bin/jsdoc --configure docs/config/.jsdoc.json --verbose",
-    "serve-docs": "./node_modules/.bin/live-server ./docs",
-    "readme": "node_modules/.bin/jsdoc2md \"src/js/**/*.js\" --template docs/templates/readme.md > README.md",
-    "docs": "node ./node_modules/concurrently/src/main.js \"npm run readme\" \"npm run jsdoc\""
+    "stylus": "stylus src/styl/BlankUp.styl --out src/css --use url --with \"{limit: false}\" --watch",
+    "watchify": "watchify -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v",
+	"serve": "live-server ./build",
+    "jsdoc": "jsdoc --configure docs/config/.jsdoc.json --verbose",
+    "serve-docs": "live-server ./docs",
+    "readme": "jsdoc2md \"src/js/**/*.js\" --template docs/templates/readme.md > README.md",
+    "docs": "concurrently \"npm run readme\" \"npm run jsdoc\"",
+	"dev": "set DEV=true && concurrently --kill-others \"npm run stylus\" \"npm run watchify\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,7 @@
     "browserify": "^13.0.1",
     "browserify-css": "^0.9.1",
     "codemirror": "^5.16.0",
-    "concurrently": "^2.1.0",
+    "concurrently": "^2.2.0",
     "docdash": "^0.4.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "highlight.js": "^9.4.0",
