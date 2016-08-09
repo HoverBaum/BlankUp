@@ -1,17 +1,17 @@
 {
   "name": "BlankUp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Markdown editor with clarity +1",
   "main": "build/BlankUp.js",
   "scripts": {
     "stylus": "stylus src/styl/BlankUp.styl --out src/css --use url --with \"{limit: false}\" --watch",
     "watchify": "watchify -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v",
-	"serve": "live-server ./build",
+    "serve": "live-server ./build",
     "jsdoc": "jsdoc --configure docs/config/.jsdoc.json --verbose",
     "serve-docs": "live-server ./docs",
     "readme": "jsdoc2md \"src/js/**/*.js\" --template docs/templates/readme.md > README.md",
     "docs": "concurrently \"npm run readme\" \"npm run jsdoc\"",
-	"dev": "set DEV=true && concurrently --kill-others \"npm run stylus\" \"npm run watchify\" \"npm run serve\""
+    "dev": "set DEV=true && concurrently --kill-others \"npm run stylus\" \"npm run watchify\" \"npm run serve\""
   },
   "repository": {
     "type": "git",
