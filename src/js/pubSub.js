@@ -9,6 +9,7 @@ const channelEvents = new Map()
  *
  *   @param  {string}   channel    - Channel identifier
  *   @param  {function} callback   - Function call upon event.
+ *   @private
  */
 const subscribe = (channel, callback) => {
 
@@ -27,6 +28,7 @@ const subscribe = (channel, callback) => {
  *
  *   @param  {string} channel - Channel identifier.
  *   @param  {Object} event   - THe event.
+ *   @private
  */
 const emit = (channel, event) => {
 

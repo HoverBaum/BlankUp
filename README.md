@@ -26,7 +26,7 @@ This is a well working beta version. In fact if you only want an editor for mark
 ## Functions
 
 <dl>
-<dt><a href="#BlankUpEditor">BlankUpEditor(container)</a> ⇒ <code><a href="#BlankUp">BlankUp</a></code></dt>
+<dt><a href="#BlankUp">BlankUp(container)</a> ⇒ <code><a href="#BlankUp">BlankUp</a></code></dt>
 <dd><p>Create an instance of a BlankUp Markdown editor in a given element.</p>
 </dd>
 </dl>
@@ -39,7 +39,9 @@ This is a well working beta version. In fact if you only want an editor for mark
 * [BlankUp](#BlankUp) : <code>object</code>
     * [.previewVisible(visible)](#BlankUp+previewVisible)
     * [.setMarkdown(markdown)](#BlankUp+setMarkdown)
+    * [.on(event, listener)](#BlankUp+on)
     * [.getMarkdown()](#BlankUp+getMarkdown) ⇒ <code>String</code>
+    * [.focus()](#BlankUp+focus)
 
 <a name="BlankUp+previewVisible"></a>
 
@@ -63,6 +65,18 @@ Set the current conent of the editor to a given markdown.
 | --- | --- | --- |
 | markdown | <code>String</code> | New content of the editor. |
 
+<a name="BlankUp+on"></a>
+
+### blankUp.on(event, listener)
+Subscribe a listener to an event.
+
+**Kind**: instance method of <code>[BlankUp](#BlankUp)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| event | <code>String</code> | The event to subscribe to. |
+| listener | <code>function</code> | Function to call when event happens. |
+
 <a name="BlankUp+getMarkdown"></a>
 
 ### blankUp.getMarkdown() ⇒ <code>String</code>
@@ -70,9 +84,15 @@ Get the current content of the editor.
 
 **Kind**: instance method of <code>[BlankUp](#BlankUp)</code>  
 **Returns**: <code>String</code> - - The current markdown content of the editor.  
-<a name="BlankUpEditor"></a>
+<a name="BlankUp+focus"></a>
 
-## BlankUpEditor(container) ⇒ <code>[BlankUp](#BlankUp)</code>
+### blankUp.focus()
+Focus the editor.
+
+**Kind**: instance method of <code>[BlankUp](#BlankUp)</code>  
+<a name="BlankUp"></a>
+
+## BlankUp(container) ⇒ <code>[BlankUp](#BlankUp)</code>
 Create an instance of a BlankUp Markdown editor in a given element.
 
 **Kind**: global function  
