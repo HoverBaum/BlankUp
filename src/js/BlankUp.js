@@ -261,7 +261,8 @@ const BlankUp = function createBlankUpEditor(container) {
 		setMarkdown,
 		getMarkdown,
 		editor,
-		on: registerEventListener
+		on: registerEventListener,
+		focus: editor.focus
     }
 
 }
