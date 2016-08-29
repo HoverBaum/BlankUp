@@ -1358,7 +1358,6 @@ body {
   padding-top: 0.5em;
 }
 .CodeMirror-scroll {
-  min-height: 100%;
   max-width: 800px;
   width: 80%;
 }
