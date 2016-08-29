@@ -1,6 +1,6 @@
 {
   "name": "BlankUp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Markdown editor with clarity +1",
   "main": "build/BlankUp.js",
   "scripts": {
