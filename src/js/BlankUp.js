@@ -21,7 +21,9 @@ const CodeMirror = require('codemirror/lib/codemirror')
 //Also some css
 require('../css/BlankUp.css')
 
+//Our own modules
 const Events = require('./pubSub')
+const Sizer = require('./sizer')
 
 const generateId = () => {
 	return (Date.now() + Math.random().toString(36).substr(2, 9)).toUpperCase()
@@ -127,7 +129,7 @@ const BlankUp = function createBlankUpEditor(container) {
             if (!allold[i].isEqualNode(allnew[i])) {
                 const maxScroll = out.scrollHeight - out.offsetHeight
                 if (allnew[i].offsetTop <= maxScroll) {
-                    out.scrollTop = allnew[i].offsetTop
+					out.scrollTop = allnew[i].offsetTop - out.offsetTop
                 } else {
                     out.scrollTop = maxScroll
                 }
@@ -163,10 +165,14 @@ const BlankUp = function createBlankUpEditor(container) {
 		})
 	})
 
+	//Make sure editor is sized right.
+	Sizer(BlankUpInput)
+
 	//Make the preview scroll along nicely.
-    BlankUpInput.addEventListener('scroll', (e) => {
-        const inputScroll = BlankUpInput.scrollTop
-        const ratio = (BlankUpPreview.scrollHeight - BlankUpPreview.offsetHeight) / (BlankUpInput.scrollHeight - BlankUpInput.offsetHeight)
+    editor.on('scroll', (e) => {
+		const scroller = BlankUpInput.querySelector('.CodeMirror-scroll')
+        const inputScroll = scroller.scrollTop
+        const ratio = (BlankUpPreview.scrollHeight - BlankUpPreview.offsetHeight) / (scroller.scrollHeight - scroller.offsetHeight)
         const scrollTop = inputScroll * ratio
         BlankUpPreview.scrollTop = scrollTop
     })

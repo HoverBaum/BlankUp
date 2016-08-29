@@ -1316,18 +1316,8 @@ body {
   height: 100%;
   background-color: #3d4954;
 }
-.BlankUp-part,
-.BlankUp__input,
-.BlankUp__preview {
-  flex-grow: 1;
-  height: 100%;
-  overflow-y: scroll;
-  padding: 0 2rem;
-  box-sizing: border-box;
-}
 .BlankUp__input {
   width: 100%;
-  padding-top: 1em;
   cursor: text;
 }
 .BlankUp_show-preview .BlankUp__input {
@@ -1335,10 +1325,11 @@ body {
 }
 .BlankUp__preview {
   background-color: #fff;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
   display: none;
   width: 50%;
+  overflow-y: scroll;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 .BlankUp_show-preview .BlankUp__preview {
   display: block;
@@ -1357,8 +1348,7 @@ body {
 	Codemirror arrangements
  */
 .CodeMirror {
-  min-height: 100%;
-  height: auto;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1407,3 +1397,4 @@ a:before {
 a:visited {
   color: #333;
 }
+/*# sourceMappingURL=BlankUp.css.map */

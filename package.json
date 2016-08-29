@@ -4,7 +4,7 @@
   "description": "Markdown editor with clarity +1",
   "main": "build/BlankUp.js",
   "scripts": {
-    "stylus": "stylus src/styl/BlankUp.styl --out src/css --use url --with \"{limit: false}\" --watch",
+    "stylus": "stylus src/styl/BlankUp.styl --out src/css --use url --with \"{limit: false}\" --watch -m",
     "watchify": "watchify -t browserify-css src/js/BlankUp -o build/BlankUp.js --debug -v",
     "serve": "live-server ./build",
     "jsdoc": "jsdoc --configure docs/config/.jsdoc.json --verbose",
