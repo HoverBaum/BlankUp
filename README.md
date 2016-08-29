@@ -1,5 +1,7 @@
 <img src="img/logo.jpg" width="300" style="margin: 0 auto;display:block;">
 
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
 A clear and simple markdown editor.
 
 ![BlankUp in action.](img/BlankUpDemo.png)
