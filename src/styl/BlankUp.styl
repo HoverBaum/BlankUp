@@ -25,29 +25,20 @@ body
 	height: 100%
 	background-color: syntax-background-color
 
-.BlankUp-part
-	flex-grow: 1
-	height: 100%
-	overflow-y: scroll
-	padding: 0 2rem
-	box-sizing: border-box
-
 .BlankUp__input
-	@extend .BlankUp-part
 	width: 100%
-	padding-top: 1em
 	cursor: text
 
 .BlankUp_show-preview .BlankUp__input
 	width: 50%
 
 .BlankUp__preview
-	@extend .BlankUp-part
 	background-color: #fff
-	padding-top: 2rem
-	padding-bottom: 2rem
 	display: none
 	width: 50%
+	overflow-y: scroll
+	padding: 2rem
+	box-sizing: border-box
 
 .BlankUp_show-preview .BlankUp__preview
     display: block
@@ -71,8 +62,7 @@ body
  */
 
 .CodeMirror
-	min-height: 100%
-	height: auto
+	width: 100%
 	display: flex
 	flex-direction: row
 	justify-content: center
